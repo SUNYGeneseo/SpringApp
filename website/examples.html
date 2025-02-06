@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--       _
+.__(.)< (MEOW)
+ \___)
+~~~~~~~~~~~~~~~~~~-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+       <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Examples - Spring Motion</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML' ></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML' ></script>
+        <script src="parser.js" defer></script>
+        <script src="diffeqs.js" defer></script>
+        <script src="visuals.js" defer></script>
+        <script src="escript.js" defer></script>
+        <link rel="stylesheet" href="springappex.css">
+        <!-- Examples application page - "examples.html"
+             Programmers: Salvador Galarza, Jack Truckenmiller
+             -->
+    </head>
+    <body class="light">
+
+
+      <div id="topNavBar" class="w3-bar w3-top w3-white">
+        <div>
+         <a href="index.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">Home</a>
+         <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge w3-hide-small">About</a>
+         <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-blue-gray w3-xlarge w3-hide-small">Examples</a>
+         <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-xlarge w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+        </div>
+        <p id="line"></p>
+      </div>
+
+      <div id="demo" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium">
+        <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">About</a>
+        <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">Examples</a>
+      </div>
+
+  <h1>Examples</h1>
+  <h5>
+      Here we provide a few simple examples to help you get started.
+  </h5>
+  <h5>
+  For each of these, the default initial conditions \(t_0 = 0\), \(x_0 = -4\), and \(v_0 = 0\) are used.
+  </h5>
+
+  <button type="button" class="collapsible"  onclick="showHideExample(0)">Example 1 - Undamped</button>
+  <div class="ex">
+    <div class="Ex1p">
+        <b>Example 1:</b> Let's begin by using \(m = 2\), \(d = 0\), \(k = 8\), and no external forcing term
+        (\(f(t) = 0\)). This is a simple example of <b><em>undamped</em></b> motion. Notice that with undamped 
+        motion, the spring oscillates forever. This is because there is no damping to reduce the motion over time. 
+        In the next examples, we will see what effect damping has on the spring.
+  </div>
+
+    <div id="canvases">
+      <div id="springBack">
+        <canvas id="springEx1" height="500" width="500"></canvas>
+      </div>
+      <div>
+        <div id="graph">
+          <div class="wrapper">
+            <canvas id="axesGraphEx1" height="500" width="500">Canvas not Supported</canvas>
+            <canvas id="posGraphEx1" height="500" width="500" style="visibility: visible"></canvas>
+            <canvas id="posBallEx1" height="500" width="500" style="visibility: visible"></canvas>
+            <canvas id="velGraphEx1" height="500" width="500" style="visibility: hidden"></canvas>
+            <canvas id="velBallEx1" height="500" width="500" style="visibility: hidden"></canvas>
+            <canvas id="extForceGraphEx1" height="500" width="500" style="visibility: hidden"></canvas>
+            <canvas id="extForceBallEx1" height="500" width="500" style="visibility: hidden"></canvas>
+          </div>
+        </div>
+        <div id="graphControls">
+          <input id="posCheckEx1" type="checkbox" onclick="showPositionGraph(0)" checked>
+          <label for="posCheckEx1" style="color: #136f29">Position</label>
+          <input id="velCheckEx1" type="checkbox" onclick="showVelocityGraph(0)">
+          <label for="velCheckEx1" style="color: #13276f">Velocity</label>
+          <input id="extForceCheckEx1" type="checkbox" onclick="showForcingTermGraph(0)">
+          <label for="extForceCheckEx1" style="color: #6f1313">External Forcing Term</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="collapsible" onclick="showHideExample(1)">Example 2 - Under Damped</button>
+  <div class="ex2">
+  <div class="Ex2p" style="margin-top: 0px;">
+      <b>Example 2:</b> This time we will use \(m = 5\), \(d = 1\), \(k = 10\), and again no external forcing 
+      term (\(f(t) = 0 \)). The spring now has <b><em>under damped</em></b> motion. The oscillation is no longer 
+      constant, and you can see that the spring's motion gets smaller and smaller over time until it has only a 
+      small "ringing" motion. The damping constant is not yet big enough to stop the spring entirely, but it does
+      have a noticeable effect. The reason for this is that the discriminant (\(d^2 - 4(m)(k)\)) when using 
+      the quadratic formula to find the roots is less than \(0\), so the roots are complex which means that the 
+      solutions to the differential equation involve sines and cosines still. These cause the ringing with their 
+      oscillatory nature. In the next two examples, we will see what happens when the discriminant is greater than 
+      or equal to \(0\).
+  </div>
+    <div id = "canvases2">
+      <div id ="springBack2">
+        <canvas id="springEx2" height="500" width="500"></canvas>
+      </div>
+      <div>
+        <div id="graph2">
+          <div class="wrapper">
+            <canvas id="axesGraphEx2" height="500" width="500">Canvas not Supported</canvas>
+            <canvas id="posGraphEx2" height="500" width="500" style="visibility: visible"></canvas>
+            <canvas id="posBallEx2" height="500" width="500" style="visibility: visible"></canvas>
+            <canvas id="velGraphEx2" height="500" width="500" style="visibility: hidden"></canvas>
+            <canvas id="velBallEx2" height="500" width="500" style="visibility: hidden"></canvas>
+            <canvas id="extForceGraphEx2" height="500" width="500" style="visibility: hidden"></canvas>
+            <canvas id="extForceBallEx2" height="500" width="500" style="visibility: hidden"></canvas>
+          </div>
+        </div>
+        <div id="graphControls2">
+          <input id="posCheckEx2" type="checkbox" onclick="showPositionGraph(1)" checked>
+          <label for="posCheckEx2" style="color: #136f29">Position</label>
+          <input id="velCheckEx2" type="checkbox" onclick="showVelocityGraph(1)">
+          <label for="velCheckEx2" style="color: #13276f">Velocity</label>
+          <input id="extForceCheckEx2" type="checkbox" onclick="showForcingTermGraph(1)">
+          <label for="extForceCheckEx2" style="color: #6f1313">External Forcing Term</label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <button type="button" class="collapsible" onclick="showHideExample(2)">Example 3 - Critically Damped</button>
+  <div class="ex3">
+    <div class="Ex3p" style="margin-top: 0px;">
+        <b>Example 3:</b> Use \(m = 2\), \(d = 4\), and \(k = 2\), and again no external forcing 
+        term (\(f(t) = 0 \)). The spring now has <b><em>critically damped</em></b> motion. There is no longer 
+        any oscillation. Instead, the spring simply settles into its equillibrium once released. This is because 
+        \(d^2 - 4(m)(k) = 0\). The solutions to the differential equation are real and repeated, and they 
+        don't have sines or cosines to allow for osciallation of the spring.
+  </div>
+  <div id = "canvases3">
+    <div id ="springBack3">
+      <canvas id="springEx3" height="500" width="500"></canvas>
+    </div>
+    <div>
+      <div id="graph3">
+        <div class="wrapper">
+          <canvas id="axesGraphEx3" height="500" width="500">Canvas not Supported</canvas>
+          <canvas id="posGraphEx3" height="500" width="500" style="visibility: visible"></canvas>
+          <canvas id="posBallEx3" height="500" width="500" style="visibility: visible"></canvas>
+          <canvas id="velGraphEx3" height="500" width="500" style="visibility: hidden"></canvas>
+          <canvas id="velBallEx3" height="500" width="500" style="visibility: hidden"></canvas>
+          <canvas id="extForceGraphEx3" height="500" width="500" style="visibility: hidden"></canvas>
+          <canvas id="extForceBallEx3" height="500" width="500" style="visibility: hidden"></canvas>
+        </div>
+      </div>
+      <div id="graphControls3">
+        <input id="posCheckEx3" type="checkbox" onclick="showPositionGraph(2)" checked>
+        <label for="posCheckEx3" style="color: #136f29">Position</label>
+        <input id="velCheckEx3" type="checkbox" onclick="showVelocityGraph(2)">
+        <label for="velCheckEx3" style="color: #13276f">Velocity</label>
+        <input id="extForceCheckEx3" type="checkbox" onclick="showForcingTermGraph(2)">
+        <label for="extForceCheckEx3" style="color: #6f1313">External Forcing Term</label>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <button type="button" class="collapsible" onclick="showHideExample(3)">Example 4 - Over Damped</button>
+  <div class="ex4">
+    <div class="Ex4p" style="margin-top: 0px;">
+      <b>Example 4:</b> Using \(m = 1\), \(d = 4\), \(k = 3\), and no external forcing terms, we get a 
+      spring with <b><em>over damped</em></b> motion. Like with critically damped, the spring simply 
+      moves to its equillibrium point once released. The discriminant is greater than \(0\), so the 
+      solutions to the differential equation are real and distinct. Therefore, there are no sines or 
+      cosines to cause any oscillation.
+  </div>
+    <div id = "canvases4">
+      <div id ="springBack4">
+        <canvas id="springEx4" height="500" width="500"></canvas>
+      </div>
+      <div>
+        <div id="graph4">
+          <div class="wrapper">
+            <canvas id="axesGraphEx4" height="500" width="500">Canvas not Supported</canvas>
+            <canvas id="posGraphEx4" height="500" width="500" style="visibility: visible"></canvas>
+            <canvas id="posBallEx4" height="500" width="500" style="visibility: visible"></canvas>
+            <canvas id="velGraphEx4" height="500" width="500" style="visibility: hidden"></canvas>
+            <canvas id="velBallEx4" height="500" width="500" style="visibility: hidden"></canvas>
+            <canvas id="extForceGraphEx4" height="500" width="500" style="visibility: hidden"></canvas>
+            <canvas id="extForceBallEx4" height="500" width="500" style="visibility: hidden"></canvas>
+          </div>
+        </div>
+        <div id="graphControls4">
+          <input id="posCheckEx4" type="checkbox" onclick="showPositionGraph(3)" checked>
+          <label for="posCheckEx4" style="color: #136f29">Position</label>
+          <input id="velCheckEx4" type="checkbox" onclick="showVelocityGraph(3)">
+          <label for="velCheckEx4" style="color: #13276f">Velocity</label>
+          <input id="extForceCheckEx4" type="checkbox" onclick="showForcingTermGraph(3)">
+          <label for="extForceCheckEx4" style="color: #6f1313">External Forcing Term</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

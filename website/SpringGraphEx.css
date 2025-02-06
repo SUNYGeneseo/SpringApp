@@ -1,0 +1,275 @@
+
+/* Example application page - "SpringGraphEx.css"
+     Programmer: Salvador Galarza
+ */
+body.dark {
+background-color: rgb(30,34,39);
+color: #fff;
+}
+body.dark code[class*=language-],
+body.dark table tbody>tr:nth-child(odd)>td,
+body.dark table tbody>tr:nth-child(odd)>th {
+background: #282c34
+}
+@media (prefers-color-scheme: dark) {
+body {
+background-color: black;
+color: white;
+}
+}
+@media (prefers-color-scheme: light) {
+body {
+background-color: white;
+color: black;
+}
+}
+
+h1 {
+  margin-left: 5%;
+  margin-top: 60px;
+}
+
+#graphControls, #graphControls2, #graphControls3, #graphControls4 {
+  position: absolute;
+  display: block;
+  height: 30px;
+  width: 550px;
+  left: 6%;
+  margin-top: 0px;
+  padding: 2px 4px;
+}
+
+#springBack, #springBack2, #springBack3, #springBack4 {
+  position:absolute;
+  display: block;
+  height: 550px;
+  width: 550px;
+  /* background-color: #ECF0F1; */
+  right:5%;
+  margin-top: 0px;
+
+  background: white;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 9px;
+  -moz-border-radius: 9px;
+  -o-box-shadow: 0 5px 5px #333333;
+  -webkit-box-shadow: 0 5px 5px #333333;
+  -moz-box-shadow: 0 5px 5px #333333;
+  box-shadow: 0 5px 5px #333333;
+}
+
+
+canvas {
+  margin-top: 0px;
+  margin-left: 0px;
+  border: solid;
+  border-width: thin;
+}
+
+.Ex1p {
+  padding: 10px 85px;
+  text-align: justify;
+}
+
+.Ex2p, .Ex3p, .Ex4p {
+  margin-top: 600px;
+  padding: 10px 85px;
+  text-align: justify;
+}
+
+
+#graph, #graph2, #graph3, #graph4 {
+  position:absolute;
+  display: block;
+  height: 550px;
+  width: 550px;
+  /* background-color: #ECF0F1; */
+  left:5%;
+  margin-top: 0px;
+
+    background: white;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -o-box-shadow: 0 5px 5px #333333;
+    -webkit-box-shadow: 0 5px 5px #333333;
+    -moz-box-shadow: 0 5px 5px #333333;
+    box-shadow: 0 5px 5px #333333;
+
+}
+
+
+.wrapper {
+  position: relative;
+  height: 500px;
+  width: 500px;
+}
+
+.wrapper canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 5px;
+  margin-left: -15px;
+}
+
+/* #ball, #ball2 {
+  position: absolute;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+}
+
+#ball {
+  background: red;
+}
+
+#ball2 {
+  background: blue;
+} */
+
+/* #NewGraph {
+  position:absolute;
+  display: block;
+  height: 501px;
+  width: 501px;
+  background-color: #ECF0F1;
+  margin-top: 100px;
+  right: 10%;
+} */
+
+
+/* #mass1 {
+  position: absolute;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: red;
+}
+
+#mass2 {
+  position: absolute;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: blue;
+} */
+
+
+
+
+
+        #springEx1, #springEx2, #springEx3, #springEx4 {
+            position: absolute;
+            display: block;
+            border: 1px solid black;
+            margin-top: 5px;
+            margin-left: -15px;
+        }
+
+        #canvases {
+          position: relative;
+          left: 0;
+          margin-bottom: 10px;
+
+        }
+
+        #canvases2 {
+          position: relative;
+          left: 0;
+          margin-bottom: 10px;
+
+        }
+
+        *:focus{
+          outline: none;
+        }
+
+
+        @media (max-width:1245px) {
+
+          #canvases, #canvases2, #canvases3, #canvases4 {
+            position: absolute;
+            left:6%;
+
+          }
+
+          #springBack, #springBack2, #springBack3, #springBack4 {
+            position: absolute;
+            display: block;
+            left: 5%;
+            margin-top: 600px;
+
+          }
+          .Ex2p {
+            margin-top: 1170px;
+          }
+
+          .Ex3p {
+            margin-top: 1170px;
+          }
+
+          .Ex4p {
+            margin-top: 1170px;
+          }
+          /* #graphControls, #graphControls2, #graphControls3, #graphControls4 {
+            margin-top: 650px;
+          } */
+
+
+        }
+
+#mySidebar {
+  top: 1.5px;
+  right: 0px;
+  width: 50%;
+}
+
+/* #openside {
+
+} */
+
+/* #TopBar {
+  position: absolute;
+  margin-bottom: 10px;
+  border: solid thin;
+  width:auto;
+  right: 0;
+  left:0;
+  margin-left: auto;
+  margin-right: auto;
+
+} */
+
+.solsteps {
+  padding: 10px 12px;
+}
+
+/* @media (min-width:2500px){
+  #springBack {
+    left:50%;
+  }
+  #graph {
+    right:50%;
+  }
+
+
+} */
+
+#topNavBar {
+  border: solid thin;
+  /* width:auto;
+  left:-1px;
+  right: -1px; */
+}
+
+#demo {
+  margin-top:50px;
+}

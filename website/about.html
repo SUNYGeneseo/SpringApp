@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<!--       _
+.__(.)< (MEOW)
+ \___)
+~~~~~~~~~~~~~~~~~~-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+       <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About - Spring Motion</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML' async></script>
+        <meta name="theme-color" content="black">
+<meta name="msapplication-navbutton-color" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- About application page - "about.html"
+     Programmer: Salvador Galarza
+    -->
+    </head>
+    <style>
+    h1 {
+      margin-left: 5%;
+      margin-top: 60px;
+    }
+
+    .abt {
+        padding: 10px 85px;
+        text-align: justify;
+      }
+
+    #topNavBar {
+      border: solid thin;
+    }
+
+    #demo {
+      margin-top:50px;
+    }
+
+    #image {
+      position: relative;
+      display: block;
+      width: 500px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .caption {
+      text-align: center;
+      font-size: 12px;
+    }
+    body.dark {
+    background-color: rgb(30,34,39);
+    color: #fff;
+    }
+    body.dark code[class*=language-],
+    body.dark table tbody>tr:nth-child(odd)>td,
+    body.dark table tbody>tr:nth-child(odd)>th {
+    background: #282c34
+    }
+    @media (prefers-color-scheme: light) {
+    body {
+    background-color: white;
+    color: #282c34;
+    }
+    }
+    @media (prefers-color-scheme: dark) {
+    body {
+    background-color: #282c34;
+    color: white;
+    }
+    }
+
+
+    </style>
+    <body class="light">
+
+      <div id="topNavBar" class="w3-bar w3-top w3-white">
+        <div>
+         <a href="index.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">Home</a>
+         <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-blue-gray w3-xlarge w3-hide-small">About</a>
+         <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge w3-hide-small">Examples</a>
+         <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-xlarge w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+        </div>
+        <p id="line"></p>
+      </div>
+
+      <div id="demo" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium">
+        <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">About</a>
+        <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">Examples</a>
+        <button id="openside" class="w3-bar-item w3-button w3-white w3-xlarge" onclick="w3_open()">Solution Steps</button>
+</div>
+
+<h1>About</h1>
+
+        <div class="about">
+          <div class="abt">
+
+            <p>
+                This spring motion application was created by students Salvador Galarza and Jack Truckenmiller, for an
+                interdisciplinary directed study, under the guidance of professor <a href="https://www.geneseo.edu/math/baldwin">
+                Doug Baldwin</a>, with additional guidance from professor <a href="https://www.geneseo.edu/math/heap">
+                Aaron Heap</a>, both of the Mathematics Department at <a href="https://www.geneseo.edu/">SUNY Geneseo</a>.
+              </p>
+              <p>
+                We have created a web application which aids students in visualizing a second order differential equation representing a model of harmonic motion as well as finding solutions to this equation. To this end, we have used HTML5, CSS, and JavaScript to construct an algorithm which solves a differential equation based on parameters input by the user. Our application not only solves a differential equation and presents the user with the solution, it also provides the user a visualization of the motion by graphing the solution and through an animated spring we have created which oscillates corresponding to the solution. Our application built completely from scratch was inspired and serves as an improved version of another application, created ten years ago by a now Geneseo alumnus, which was built using web development practices that have now become out-of-date. In addition to creating similar and improved functionality to the previous application, we have added the ability to display the step-by-step process for solving the second order differential equation as well as presenting the final symbolic solution when appropriate. Our application also increases its accesability by enabling users to access it through all modern web browsers.
+              </p>
+
+            </div>
+        </div>
+
+        <img id="image" src="SJ.jpg" alt="Salvador and Jack GREAT Day 2019" />
+        <p class="caption"> Salvador Galarza (left) and Jack Truckenmiller (right) GREAT Day 2019 </p>
+
+
+
+    </body>
+</html>

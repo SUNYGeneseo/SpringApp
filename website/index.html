@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--       _
+.__(.)< (MEOW)
+ \___)
+~~~~~~~~~~~~~~~~~~-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Motion</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="springapp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML' async></script>
+  <script src="parser.js" defer></script>
+  <script src="diffeqs.js" defer></script>
+  <script src="visuals.js" defer></script>
+  <script src="script.js" defer></script>
+  <!-- Main application page - "index.html"
+       Programmers: Salvador Galarza, Jack Truckenmiller
+       Created: 02/10/19
+       Updated: 02/06/25 -->
+
+</head>
+<body class="dark">
+  <div id="topNavBar" class="w3-bar w3-top w3-white">
+    <div>
+      <a href="index.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-blue-gray w3-xlarge">Home</a>
+      <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge w3-hide-small">About</a>
+      <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge w3-hide-small">Examples</a>
+      <button id="openside" class="w3-bar-item w3-button w3-xlarge w3-hide-small">Solution Steps</button>
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-xlarge w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+      </div>
+        <p id="line"></p>
+      </div>
+
+      <div id="demo" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium">
+        <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">About</a>
+        <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">Examples</a>
+        <button id="openside" class="w3-bar-item w3-button w3-white w3-xlarge">Solution Steps</button>
+      </div>
+  </div>
+
+  <h1>Spring Motion</h1>
+  <h4 class="WhoDoneIt">Created by: Salvador Galarza & Jack Truckenmiller</h4>
+  <div class="w3-sidebar w3-bar-block w3-animate-right" style="display:none" id="mySidebar">
+    <button id="closeside" class="w3-bar-item w3-button w3-large"> &times;</button>
+    <p id="stepPH" class="solsteps">
+      Steps will appear here once parameters are inputed and the differential equation is solved.
+    </p>
+    <div id="step1" class="solsteps"></div>
+    <div id="step2" class="solsteps"></div>
+    <div id="step3" class="solsteps"></div>
+    <div id="step4" class="solsteps"></div>
+    <div id="step5" class="solsteps"></div>
+    <br />
+  </div>
+
+  <div id = "canvases">
+    <div id ="springBack">
+      <canvas id="spring" height="500" width="500"></canvas>
+      <div id="dampDisplay">
+          <p id="dampType" style="color:#E06D1E; font-weight: bold; text-shadow: 1px 1px gray; font-size: 20px; margin-top: -22px; margin-left: -12px;"></p>
+      </div>
+    </div>
+    <div>
+      <div id="graph">
+        <div class="wrapper">
+          <canvas id="axesGraph" height="500" width="500">Canvas not Supported</canvas>
+          <canvas id="posGraph" height="500" width="500" style="visibility: visible"></canvas>
+          <canvas id="posBall" height="500" width="500" style="visibility: visible"></canvas>
+          <canvas id="velGraph" height="500" width="500" style="visibility: hidden"></canvas>
+          <canvas id="velBall" height="500" width="500" style="visibility: hidden"></canvas>
+          <canvas id="extForceGraph" height="500" width="500" style="visibility: hidden"></canvas>
+          <canvas id="extForceBall" height="500" width="500" style="visibility: hidden"></canvas>
+        </div>
+      </div>
+      <div id="graphControls">
+        <input id="posCheck" type="checkbox" checked>
+        <label for="posCheck" style="color: #136f29">Position</label>
+        <input id="velCheck" type="checkbox">
+        <label for="velCheck" style="color: #13276f">Velocity</label>
+        <input id="extForceCheck" type="checkbox">
+        <label for="extForceCheck" style="color: #6f1313">External Forcing Term</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="notcanvases">
+    <div id="symSoln" style="visibility: hidden">
+      <p>Solution:</p>
+      <span id="eq"></span>
+    </div>
+
+    <div id="controls">
+      <button id="solve" class="w3-button">Solve</button>
+      <button id="animate" class="w3-button" style="display: inline">Animate</button>
+      <button id="stopAnimate" class="w3-button" style="display: none">Stop Animating</button>
+      <button id="reset" class="w3-button">Reset</button>
+    </div>
+
+    <div id ="DiffEq">
+      <input id="mass" type="number" name="mass" value="8" min="0" step="any" placeholder="Mass (m)" />\(x&rsquo;&rsquo; +\)
+      <input id="damping" type="number" value="1.4" step="any" placeholder="Damping (d)" />\(x&rsquo; +\)
+      <input id="springConst" type="number" value="10" min="0" step="any" placeholder="Spring Constant (k)" />\(x =\)
+      <input id="extForceTerm" type="text" value="0" placeholder="External Forcing Term (b(t))" />
+    </div>
+
+    <div id="lol">
+      <div id = "InitialConditions">
+        <h3>Initial Conditions</h3>
+        <p>\(t_0 =\) <input id="initTime" type="number" value="0" step="any" placeholder="Initial Time" /></p>
+        <p>\(x_0 =\) <input id="initPos" type="number" value="-4" step="any" placeholder="Initial Position" /></p>
+        <p>\(v_0 =\) <input id="initVel" type="number" value="0" step="any" placeholder="Initial Velocity" /></p>
+      </div>
+
+      <div id="x">
+        <h3>\(x\) Axis</h3>
+        <p>\(x\)-min = <input id="xMin" type="number" value="-6" step="any" placeholder="X axis minimum value." /></p>
+        <p>\(x\)-max = <input id="xMax" type="number" value="6" step="any" placeholder="X axis maximum value." /></p>
+        <p>\(x\)-step = <input id="xStep" type="number" value="1" step="any" placeholder="Distance between x tick marks." /></p>
+      </div>
+      <div id="T">
+        <h3>\(t\) Axis</h3>
+        <p>\(t\)-min = <input id="timeMin" type="number" value="0" step="any" placeholder="T axis minimum value." /></p>
+        <p>\(t\)-max = <input id="timeMax" type="number" value="60" step="any" placeholder="T axis maximum value." /></p>
+        <p>\(t\)-step = <input id="timeStep" type="number" value="5" step="any" placeholder="Distance between t tick marks." /></p>
+      </div>
+      <button id="update" class="w3-button">Update</button>
+    </div>
+  </div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+</body>
+</html>

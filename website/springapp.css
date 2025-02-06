@@ -1,0 +1,243 @@
+h1 {
+    position: absolute;
+    display: block;
+    width: 400px;
+    margin-left: 5%;
+    top: 50px
+}
+
+.WhoDoneIt {
+  position: absolute;
+  display: block;
+  width: 480px;
+  margin-left: 20%;
+  top: 90px;
+  color: black;
+}
+
+#solve,
+#animate,
+#stopAnimate,
+#reset,
+#update {
+  color: white;
+  background-color: #282c34;
+}
+
+
+#graphControls {
+    position: absolute;
+    display: block;
+    height: 30px;
+    width: 550px;
+    left: 6%;
+    margin-top: 20px;
+}
+
+#springBack {
+    position: absolute;
+    display: block;
+    height: 550px;
+    width: 550px;
+    right: 5%;
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -o-box-shadow: 0 5px 5px #333;
+    -webkit-box-shadow: 0 5px 5px #333;
+    -moz-box-shadow: 0 5px 5px #333;
+    box-shadow: 0 5px 5px #333
+}
+
+canvas {
+    margin-top: 0;
+    margin-left: 0;
+    border: solid;
+    border-width: thin;
+}
+
+#graph {
+    position: absolute;
+    display: block;
+    height: 550px;
+    width: 550px;
+    left: 5%;
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -o-box-shadow: 0 5px 5px #333;
+    -webkit-box-shadow: 0 5px 5px #333;
+    -moz-box-shadow: 0 5px 5px #333;
+    box-shadow: 0 5px 5px #333
+}
+
+.wrapper {
+    position: relative;
+    height: 500px;
+    width: 500px
+}
+
+.wrapper canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 5px;
+    margin-left: -15px
+}
+
+#damping,
+#extForceTerm,
+#mass,
+#springConst {
+    margin-top: 2px;
+    margin-bottom: 2px
+}
+
+#spring {
+    position: absolute;
+    display: block;
+    border: 1px solid #000;
+    margin-top: 5px;
+    margin-left: -15px
+}
+
+#notcanvases {
+    position: relative;
+    top: 600px
+}
+
+#controls {
+    text-align: center;
+    padding: 20px 22px
+}
+
+#DiffEq {
+    text-align: center;
+    padding: 10px 12px
+}
+
+#lol {
+    text-align: center;
+    padding: 20px 22px
+}
+
+#InitialConditions {
+    display: inline-block;
+    width: 250px;
+    border: 1px solid #000
+}
+
+#x {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    border: 1px solid #000;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+#T {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    border: 1px solid #000
+}
+
+#canvases {
+    position: relative;
+    left: 0;
+    margin-bottom: 10px
+}
+
+h1 {
+    text-align: center
+}
+
+:focus {
+    outline: 0
+}
+
+#symSoln {
+    display: block;
+    padding: 10px 12px;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #000;
+    margin-top: 120px
+}
+
+@media (max-width:1245px) {
+    #graph {
+        margin-top: 55px;
+    }
+    #NewGraph {
+        top: 550px;
+        left: 5%
+    }
+    #notcanvases {
+        position: relative;
+        top: 1150px
+    }
+    #canvases {
+        position: absolute;
+        left: 6%
+    }
+    #springBack {
+        position: absolute;
+        display: block;
+        left: 5%;
+        margin-top: 670px
+    }
+    h1 {
+        position: relative;
+    }
+    .WhoDoneIt {
+      position: relative;
+      top: 40px;
+    }
+    #graphControls {
+        position: absolute;
+        padding: 2px 4px;
+        display: block;
+        height: 30px;
+        width: 550px;
+        left: 6%;
+        margin-top: 55px;
+    }
+    #symSoln {
+        width: 55%
+    }
+}
+
+#mySidebar {
+    top: 1.5px;
+    right: 0;
+    width: 50%;
+    color: white;
+    background-color: #282c34;
+}
+
+.solsteps {
+    padding: 10px 12px
+}
+
+#topNavBar {
+    border: solid thin
+}
+
+#demo {
+    margin-top: 50px
+}
+

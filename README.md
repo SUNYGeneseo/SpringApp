@@ -1,0 +1,2 @@
+# Differential Equations Spring Motion App
+This is an HTML5 web app that uses CSS and JavaScript to provide a visual representation of the solution to a second order differential equation for spring motion. The visuals are represented in the form of a graph of the solution as well as a spring that oscillates in correspondance to the solution.

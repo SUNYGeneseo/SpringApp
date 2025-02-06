@@ -1,0 +1,247 @@
+body.dark {
+    background-color: #1e2227;
+    color: #fff
+}
+
+body.dark code[class*=language-],
+body.dark table tbody>tr:nth-child(odd)>td,
+body.dark table tbody>tr:nth-child(odd)>th {
+    background: #282c34
+}
+
+#mySidebar {
+    top: 1.5px;
+    right: 0;
+    width: 50%
+}
+
+.solsteps {
+    padding: 10px 12px
+}
+
+#topNavBar {
+    border: solid thin
+}
+
+#demo {
+    margin-top: 50px
+}
+
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    margin-left: 5%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.Ex1p, .Ex2p, .Ex3p, .Ex4p {
+    color: #282c34
+}
+
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+.ex {
+    height: 700px;
+}
+
+.ex2 {
+    height: 800px;
+}
+.ex3 {
+    height: 800px;
+}
+.ex4 {
+    height: 820px;
+}
+
+@media (prefers-color-scheme:dark) {
+    body {
+        background-color: #282c34;
+        color: #fff
+    }
+}
+
+@media (prefers-color-scheme:light) {
+    body {
+        background-color: #fff;
+        color: #000
+    }
+}
+
+h1 {
+    margin-left: 5%;
+    margin-top: 60px
+}
+
+h5 {
+    margin-left: 5%;
+    margin-top: 0px;
+}
+
+
+
+#graphControls,
+#graphControls2,
+#graphControls3,
+#graphControls4 {
+    position: absolute;
+    display: block;
+    height: 30px;
+    width: 550px;
+    left: 6%;
+    margin-top: 0;
+    padding: 2px 4px
+}
+
+#springBack, #springBack2, #springBack3, #springBack4 {
+    position: absolute;
+    display: block;
+    height: 550px;
+    width: 550px;
+    right: 5%;
+    margin-top: 0;
+    background: #fff;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -o-box-shadow: 0 5px 5px #333;
+    -webkit-box-shadow: 0 5px 5px #333;
+    -moz-box-shadow: 0 5px 5px #333;
+    box-shadow: 0 5px 5px #333
+}
+
+canvas {
+    margin-top: 0;
+    margin-left: 0;
+    border: solid;
+    border-width: thin
+}
+
+.ex,
+.ex2,
+.ex3,
+.ex4 {
+    padding: 0 180px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.Ex1p {
+    padding: 10px 85px;
+}
+
+.Ex2p,
+.Ex3p,
+.Ex4p {
+    margin-top: 600px;
+    padding: 10px 85px;
+}
+
+#graph,
+#graph2,
+#graph3,
+#graph4 {
+    position: absolute;
+    display: block;
+    height: 550px;
+    width: 550px;
+    left: 5%;
+    margin-top: 0;
+    background: #fff;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -o-box-shadow: 0 5px 5px #333;
+    -webkit-box-shadow: 0 5px 5px #333;
+    -moz-box-shadow: 0 5px 5px #333;
+    box-shadow: 0 5px 5px #333
+}
+
+.wrapper {
+    position: relative;
+    height: 500px;
+    width: 500px
+}
+
+.wrapper canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 5px;
+    margin-left: -15px
+}
+
+#posBallEx1,
+#posBallEx2,
+#posBallEx3,
+#posBallEx4
+ {
+  border: 1px solid #000;
+}
+
+#springEx1, #springEx2, #springEx3, #springEx4 {
+    position: absolute;
+    display: block;
+    border: 1px solid #000;
+    margin-top: 5px;
+    margin-left: -15px
+}
+
+:focus {
+    outline: 0
+}
+
+@media (max-width:1245px) {
+    #canvases,
+    #canvases2,
+    #canvases3,
+    #canvases4 {
+        position: absolute;
+        left: 6%
+    }
+    #springBack, #springBack2, #springBack3, #springBack4 {
+        position: absolute;
+        display: block;
+        left: 5%;
+        margin-top: 600px
+    }
+
+    .Ex2p {
+        margin-top: 1170px
+    }
+    .Ex3p {
+        margin-top: 1170px
+    }
+    .Ex4p {
+        margin-top: 1170px
+    }
+
+    .ex{
+        height: 1400px;
+    }
+
+    .ex2, .ex3, .ex4 {
+        height: 1600px;
+    }
+    .Ex1p, .Ex2p, .Ex3p, .Ex4p {
+        position: relative;
+        width: 100%;
+        margin-left: 0px;
+
+    }
+
+}
+
