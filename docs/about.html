@@ -3,7 +3,7 @@
 .__(.)< (MEOW)
  \___)
 ~~~~~~~~~~~~~~~~~~-->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
     <head>
        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About - Spring Motion</title>
@@ -79,6 +79,7 @@
          <a href="index.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">Home</a>
          <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-blue-gray w3-xlarge w3-hide-small">About</a>
          <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge w3-hide-small">Examples</a>
+         <a href="https://github.com/SUNYGeneseo/SpringApp" style="text-decoration: none;" class="w3-bar-item w3-button w3-white w3-xlarge w3-hide-small" target="_blank">GitHub Repository</a>
          <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-xlarge w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
         </div>
         <p id="line"></p>
@@ -87,7 +88,7 @@
       <div id="demo" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium">
         <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">About</a>
         <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">Examples</a>
-        <button id="openside" class="w3-bar-item w3-button w3-white w3-xlarge" onclick="w3_open()">Solution Steps</button>
+        <a href="https://github.com/SUNYGeneseo/SpringApp" style="text-decoration: none;" class="w3-bar-item w3-button w3-white w3-xlarge" target="_blank">GitHub Repository</a>
 </div>
 
 <h1>About</h1>
@@ -97,14 +98,15 @@
 
             <p>
                 This spring motion application was created by students Salvador Galarza and Jack Truckenmiller, for an
-                interdisciplinary directed study, under the guidance of professor <a href="https://www.geneseo.edu/math/baldwin">
-                Doug Baldwin</a>, with additional guidance from professor <a href="https://www.geneseo.edu/math/heap">
-                Aaron Heap</a>, both of the Mathematics Department at <a href="https://www.geneseo.edu/">SUNY Geneseo</a>.
+                interdisciplinary directed study, under the guidance of professor <a href="https://www.geneseo.edu/math/baldwin" target="_blank">
+                Doug Baldwin</a>, with additional guidance from professor <a href="https://www.geneseo.edu/math/heap" target="_blank">
+                Aaron Heap</a>, both of the Mathematics Department at <a href="https://www.geneseo.edu/" target="_blank">SUNY Geneseo</a>.
               </p>
               <p>
                 We have created a web application which aids students in visualizing a second order differential equation representing a model of harmonic motion as well as finding solutions to this equation. To this end, we have used HTML5, CSS, and JavaScript to construct an algorithm which solves a differential equation based on parameters input by the user. Our application not only solves a differential equation and presents the user with the solution, it also provides the user a visualization of the motion by graphing the solution and through an animated spring we have created which oscillates corresponding to the solution. Our application built completely from scratch was inspired and serves as an improved version of another application, created ten years ago by a now Geneseo alumnus, which was built using web development practices that have now become out-of-date. In addition to creating similar and improved functionality to the previous application, we have added the ability to display the step-by-step process for solving the second order differential equation as well as presenting the final symbolic solution when appropriate. Our application also increases its accesability by enabling users to access it through all modern web browsers.
               </p>
 
+              <p>The application source code can be found in its <a href="" target="_blank">GitHub repository</a>. The application is being hosted by <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages" target="_blank">GitHub Pages</a>.</p>
             </div>
         </div>
 
@@ -112,6 +114,15 @@
         <p class="caption"> Salvador Galarza (left) and Jack Truckenmiller (right) GREAT Day 2019 </p>
 
 
-
-    </body>
+        <script>
+          function myFunction() {
+            var x = document.getElementById("demo");
+            if (x.className.indexOf("w3-show") == -1) {
+              x.className += " w3-show";
+            } else {
+              x.className = x.className.replace(" w3-show", "");
+            }
+          }
+          </script>
+  </body>
 </html>
