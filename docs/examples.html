@@ -3,7 +3,7 @@
 .__(.)< (MEOW)
  \___)
 ~~~~~~~~~~~~~~~~~~-->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
     <head>
        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Examples - Spring Motion</title>
@@ -29,6 +29,7 @@
          <a href="index.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">Home</a>
          <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge w3-hide-small">About</a>
          <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-blue-gray w3-xlarge w3-hide-small">Examples</a>
+         <a href="https://github.com/SUNYGeneseo/SpringApp" style="text-decoration: none;" class="w3-bar-item w3-button w3-white w3-xlarge w3-hide-small" target="_blank">GitHub Repository</a>
          <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-xlarge w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
         </div>
         <p id="line"></p>
@@ -37,6 +38,7 @@
       <div id="demo" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium">
         <a href="about.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">About</a>
         <a href="examples.html" style="text-decoration:none;" class="w3-bar-item w3-button w3-white w3-xlarge">Examples</a>
+        <a href="https://github.com/SUNYGeneseo/SpringApp" style="text-decoration: none;" class="w3-bar-item w3-button w3-white w3-xlarge" target="_blank">GitHub Repository</a>
       </div>
 
   <h1>Examples</h1>
@@ -198,6 +200,15 @@
       </div>
     </div>
   </div>
-
+  <script>
+    function myFunction() {
+      var x = document.getElementById("demo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    </script>
 </body>
 </html>
